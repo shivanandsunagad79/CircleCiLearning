@@ -1,19 +1,8 @@
-version: 2
-jobs:
-  build:
-    machine:
-      ruby:
-        version: 2.0.0-p0
-      environment:
-        SELENIUM_HOST: hub.browserstack.com
-        BS_AUTOMATE_PROJECT: "Run on circleCI"
-        BS_AUTOMATE_BUILD: "build No. $CIRCLE_BUILD_NUM for circleCI"
-        SELENIUM_PLATFORM: WINDOWS
-        BS_AUTOMATE_OS_VERSION: 10
-        SELENIUM_BROWSER: Chrome
-        SELENIUM_VERSION: 73
-    steps:
-      - checkout
-      - run:
-         name: Run the tests.
-command:mvn install
+ version: 2
+ jobs:
+   build:
+     docker:
+       - image: circleci/ruby:2.4.1
+     steps:
+       - checkout
+       - run: echo "A first hello"
