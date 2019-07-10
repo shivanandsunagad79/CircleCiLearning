@@ -16,4 +16,4 @@ jobs:
       - checkout
       - run:
          name: Run the tests.
-    command:mvn install
+command:mvn install
